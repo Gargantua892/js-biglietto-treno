@@ -26,6 +26,10 @@ h4{
     color: #fff!important;
 }
 
+.card-header h3{
+    text-transform: capitalize;
+}
+
 .card-info{
     background-color: #242424;
     color: #fff;
