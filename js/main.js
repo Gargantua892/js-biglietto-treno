@@ -2,7 +2,7 @@
 let age;
 let youngDiscount;
 let oldDiscount;
-let golbalPrice;
+let globalPrice;
 let departureCity;
 let arrivalCity;
 let seat;
@@ -11,10 +11,13 @@ let randomKm =Math.floor((Math.random() * 1000)+1);
 let totalPrice;
 
 
+
 //mettere città di partenza
 departureCity = prompt("inserisci la città di partenza");
 console.log(departureCity);
 document.getElementById("departure").innerHTML = departureCity;
+
+console.log(randomKm);
 
 //Città di arrivo
 arrivalCity = prompt("inserisci la città di arrivo");
@@ -37,25 +40,26 @@ document.getElementById("seggiolino").innerHTML =  `${randomSeatNumber}A`;
 age = prompt("Quanti anni hai?");
 console.log(age);
 
-golbalPrice = (randomKm*0.21).toFixed(2);
+globalPrice = (randomKm*0.21).toFixed(2);
+console.log(globalPrice);
+
 
 //Setup sconti
 if (age < 18){
-    youngDiscount = golbalPrice - (golbalPrice*0.20).toFixed(2);
+    youngDiscount = (globalPrice - (globalPrice*0.20)).toFixed(2);
     document.getElementById("total-price").innerHTML =  `${youngDiscount}€`;
     document.getElementById("tipo-passeggero").innerHTML =  "Junior";
     document.getElementById("discount-label").innerHTML =  "Sconto Junior";
     console.log(youngDiscount);
 } else if (age > 65){
-    oldDiscount = golbalPrice - (golbalPrice*0.40.toFixed(2));
+    oldDiscount = (globalPrice - (globalPrice*0.40)).toFixed(2);
     document.getElementById("total-price").innerHTML =  `${oldDiscount}€`;
     document.getElementById("discount-label").innerHTML =  "Sconto Senior";
     document.getElementById("tipo-passeggero").innerHTML =  "Senior";
     console.log(oldDiscount);
 }
 else{
-    document.getElementById("total-price").innerHTML =  `${golbalPrice}€`;
+    document.getElementById("total-price").innerHTML =  `${globalPrice}€`;
     document.getElementById("tipo-passeggero").innerHTML =  "Ordinario";
-    console.log(globalPrice);
 }
 // oldDiscount;
